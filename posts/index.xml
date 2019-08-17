@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on @fbcbarbosa</title>
-		<link>https://fbcbarbosa.io/posts/</link>
+		<link>https://fbcbarbosa.github.io/posts/</link>
 		<description>Recent content in Posts on @fbcbarbosa</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Mon, 29 Jul 2019 20:09:33 -0300</lastBuildDate>
-		<atom:link href="https://fbcbarbosa.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://fbcbarbosa.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>What the Helm!?</title>
-			<link>https://fbcbarbosa.io/posts/what-the-helm/</link>
+			<link>https://fbcbarbosa.github.io/posts/what-the-helm/</link>
 			<pubDate>Mon, 29 Jul 2019 20:09:33 -0300</pubDate>
 			
-			<guid>https://fbcbarbosa.io/posts/what-the-helm/</guid>
+			<guid>https://fbcbarbosa.github.io/posts/what-the-helm/</guid>
 			<description> Recently, I gave a short talk at DevOpsDays Florianópolis where I discussed somme common Helm pitfalls, specially if you plan to use it for continuous delivery. Wanting to share some recommendations, and finding that slides were not the best medium for this task, I&amp;rsquo;ve started this blog. Let&amp;rsquo;s see how this goes.
 What is Helm ###
 Init Helm Securing Helm CI/CD With Helm Alternatives to Helm </description>

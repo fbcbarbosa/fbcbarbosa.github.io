@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>@fbcbarbosa</title>
-    <link>https://fbcbarbosa.io/</link>
+    <link>https://fbcbarbosa.github.io/</link>
     <description>Recent content on @fbcbarbosa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 13 Aug 2019 00:46:34 -0300</lastBuildDate>
     
-	<atom:link href="https://fbcbarbosa.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fbcbarbosa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://fbcbarbosa.io/about/</link>
+      <link>https://fbcbarbosa.github.io/about/</link>
       <pubDate>Tue, 13 Aug 2019 00:46:34 -0300</pubDate>
       
-      <guid>https://fbcbarbosa.io/about/</guid>
+      <guid>https://fbcbarbosa.github.io/about/</guid>
       <description>Hey!</description>
     </item>
     
     <item>
       <title>What the Helm!?</title>
-      <link>https://fbcbarbosa.io/posts/what-the-helm/</link>
+      <link>https://fbcbarbosa.github.io/posts/what-the-helm/</link>
       <pubDate>Mon, 29 Jul 2019 20:09:33 -0300</pubDate>
       
-      <guid>https://fbcbarbosa.io/posts/what-the-helm/</guid>
+      <guid>https://fbcbarbosa.github.io/posts/what-the-helm/</guid>
       <description> Recently, I gave a short talk at DevOpsDays Florianópolis where I discussed somme common Helm pitfalls, specially if you plan to use it for continuous delivery. Wanting to share some recommendations, and finding that slides were not the best medium for this task, I&amp;rsquo;ve started this blog. Let&amp;rsquo;s see how this goes.
 What is Helm ###
 Init Helm Securing Helm CI/CD With Helm Alternatives to Helm </description>
