@@ -4,24 +4,29 @@
   
   <url>
     <loc>https://fbcbarbosa.io/</loc>
-    <lastmod>2019-08-17T14:59:20-03:00</lastmod>
+    <lastmod>2019-08-24T20:03:50-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fbcbarbosa.io/posts/initial-commit/</loc>
+    <lastmod>2019-08-24T20:03:50-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fbcbarbosa.io/posts/</loc>
+    <lastmod>2019-08-24T20:03:50-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fbcbarbosa.io/about/</loc>
-    <lastmod>2019-08-17T14:59:20-03:00</lastmod>
+    <lastmod>2019-08-24T20:03:50-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fbcbarbosa.io/posts/</loc>
-    <lastmod>2019-08-17T14:59:20-03:00</lastmod>
+    <loc>https://fbcbarbosa.io/tags/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fbcbarbosa.io/posts/what-the-helm/</loc>
-    <lastmod>2019-08-17T14:59:20-03:00</lastmod>
   </url>
   
   <url>
