@@ -1,40 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Posts on @fbcbarbosa</title>
-		<link>https://fbcbarbosa.io/posts/</link>
-		<description>Recent content in Posts on @fbcbarbosa</description>
-		<generator>Hugo -- gohugo.io</generator>
-		<language>en-us</language>
-		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Mon, 29 Jul 2019 20:09:33 -0300</lastBuildDate>
-		<atom:link href="https://fbcbarbosa.io/posts/index.xml" rel="self" type="application/rss+xml" />
-		
-		<item>
-			<title>What the Helm!?</title>
-			<link>https://fbcbarbosa.io/posts/what-the-helm/</link>
-			<pubDate>Mon, 29 Jul 2019 20:09:33 -0300</pubDate>
-			
-			<guid>https://fbcbarbosa.io/posts/what-the-helm/</guid>
-			<description> Recently, I gave a short talk at DevOpsDays Florianópolis where I discussed somme common Helm pitfalls, specially if you plan to use it for continuous delivery. Wanting to share some recommendations, and finding that slides were not the best medium for this task, I&amp;rsquo;ve started this blog. Let&amp;rsquo;s see how this goes.
-What is Helm ###
-Init Helm Securing Helm CI/CD With Helm Alternatives to Helm </description>
-			<content type="html"><![CDATA[
-
-<p><em>Recently, I gave a short talk at DevOpsDays Florianópolis where I discussed somme common Helm pitfalls, specially if you plan to use it for continuous delivery. Wanting to share some recommendations, and finding that slides were not the best medium for this task, I&rsquo;ve started this blog. Let&rsquo;s see how this goes.</em></p>
-
-<h3 id="what-is-helm">What is Helm</h3>
-
-<p>###</p>
-
-<h2 id="init-helm">Init Helm</h2>
-
-<h2 id="securing-helm">Securing Helm</h2>
-
-<h2 id="ci-cd-with-helm">CI/CD With Helm</h2>
-
-<h2 id="alternatives-to-helm">Alternatives to Helm</h2>
-]]></content>
-		</item>
-		
-	</channel>
+  <channel>
+    <title>Posts on @fbcbarbosa</title>
+    <link>https://fbcbarbosa.io/posts/</link>
+    <description>Recent content in Posts on @fbcbarbosa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://fbcbarbosa.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Initial commit</title>
+      <link>https://fbcbarbosa.io/posts/initial-commit/</link>
+      <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://fbcbarbosa.io/posts/initial-commit/</guid>
+      <description>Recently, I&amp;rsquo;ve given a short talk at DevOpsDays Florianópolis on Helm, Kubernetes de-facto release manager tool. I&amp;rsquo;ve aptly named it &amp;ldquo;What the Helm!?&amp;rdquo; (a play on words with &amp;ldquo;What the Hell!?&amp;rdquo;), and then gave myself a nice pat on the back. Still, being incapable of ever doing something original, I immediately found out that the joke had been published already. Twice.
+In this talk I&amp;rsquo;ve discussed a few Helm pitfalls, specially if you plan to use it for continuous delivery, like I have.</description>
+    </item>
+    
+  </channel>
 </rss>
