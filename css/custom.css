@@ -13,8 +13,3 @@
 [role="contentinfo"] {
   font-size: 0.6em;
 }
-
-/* Remove outline for non-keyboard :focus */
-*:focus:not(.focus-visible) {
-  outline: none;
-}

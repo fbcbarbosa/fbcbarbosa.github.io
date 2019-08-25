@@ -6,7 +6,7 @@
     <description>Recent content in Posts on @fbcbarbosa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fbcbarbosa.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Initial commit</title>
       <link>https://fbcbarbosa.io/posts/initial-commit/</link>
-      <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://fbcbarbosa.io/posts/initial-commit/</guid>
       <description>Recently, I&amp;rsquo;ve given a short talk at DevOpsDays Florianópolis on Helm, Kubernetes de-facto release manager tool. I&amp;rsquo;ve aptly named it &amp;ldquo;What the Helm!?&amp;rdquo; (a play on words with &amp;ldquo;What the Hell!?&amp;rdquo;), and then gave myself a nice pat on the back. Still, being incapable of ever doing something original, I immediately found out that the joke had been published already. Twice.
