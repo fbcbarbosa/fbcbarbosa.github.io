@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on @fbcbarbosa</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://fbcbarbosa.io/posts/initial-commit/</guid>
-      <description>Recently, I&amp;rsquo;ve given a short talk at DevOpsDays Florianópolis on Helm, Kubernetes de-facto release manager tool. I&amp;rsquo;ve aptly named it &amp;ldquo;What the Helm!?&amp;rdquo; (a play on words with &amp;ldquo;What the Hell!?&amp;rdquo;), and then gave myself a nice pat on the back. Still, being incapable of ever doing something original, I immediately found out that the joke had been published already. Twice.
+      <description>Recently, I&amp;rsquo;ve given a short talk at DevOpsDays Florianópolis on Helm, Kubernetes de-facto release manager tool. I&amp;rsquo;ve aptly named it &amp;ldquo;What the Helm!?&amp;rdquo; (a play on words with &amp;ldquo;What the Hell!?&amp;quot;), and then gave myself a nice pat on the back. Still, being incapable of ever doing something original, I immediately found out that the joke had been published already. Twice.
 In this talk I&amp;rsquo;ve discussed a few Helm pitfalls, specially if you plan to use it for continuous delivery, like I have.</description>
     </item>
     
