@@ -6,10 +6,46 @@
   font-size: 0.75rem;
 }
 
-.patterns li {
-  line-height: 1.75;
-}
-
 [role="contentinfo"] {
   font-size: 0.6em;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+.patterns li {
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+li {
+  margin: 1em 0;
+}
+
+html {
+  font-size: calc(0.9em + 0.33vw);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #111;
+  background-color: #f6f5f3;
+}
+
+p {
+  margin-block-start: 1.4em;
+  margin-block-end: 1.4em;
+}
+
+:root {
+    --pt-ext-fontSecondary:  "Montserrat", sans-serif;
+}
+
+/* Reduce margins between sub-titles within posts */
+* + * {
+  margin-top: 1.2rem;
 }

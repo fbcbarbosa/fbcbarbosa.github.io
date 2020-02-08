@@ -3,38 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fbcbarbosa.io/</loc>
-    <lastmod>2020-02-02T21:06:04-03:00</lastmod>
+    <loc>https://fernandrone.com/</loc>
+    <lastmod>2020-02-08T20:07:31-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://fbcbarbosa.io/posts/initial-commit/</loc>
+    <loc>https://fernandrone.com/posts/initial-commit/</loc>
     <lastmod>2019-08-24T21:51:14-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fbcbarbosa.io/posts/</loc>
+    <loc>https://fernandrone.com/posts/</loc>
     <lastmod>2019-08-24T21:51:14-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fbcbarbosa.io/about/</loc>
-    <lastmod>2019-08-24T20:03:50-03:00</lastmod>
+    <loc>https://fernandrone.com/sobre/</loc>
+    <lastmod>2020-02-08T20:07:31-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fbcbarbosa.io/talks/</loc>
-    <lastmod>2020-02-02T21:06:04-03:00</lastmod>
+    <loc>https://fernandrone.com/talks/</loc>
+    <lastmod>2020-02-08T20:07:31-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fbcbarbosa.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fbcbarbosa.io/tags/</loc>
+    <loc>https://fernandrone.com/tags/</loc>
   </url>
   
 </urlset>
