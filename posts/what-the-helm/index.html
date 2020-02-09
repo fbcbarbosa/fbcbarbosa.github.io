@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt">
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext');
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.64.0-DEV" />
+  <link rel="canonical" href="https://fernandrone.com/posts/what-the-helm/">
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://fernandrone.com/css/prism.css" media="none" onload="this.media='all';">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://fernandrone.com/css/styles.css">
+
+  <style id="inverter" media="none">
+    html { filter: invert(100%) }
+    * { background-color: inherit }
+    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+  </style>
+
+  
+  
+  <title>What the Helm!? | @fernandrone</title>
+</head>
+
+
+<body>
+  <a href="#main">skip to content</a>
+  <link rel="stylesheet" href="https://fernandrone.com/css/custom.css">
+  <svg style="display: none">
+  <symbol id="bookmark" viewBox="0 0 40 50">
+   <g transform="translate(2266 3206.2)">
+    <path style="stroke:currentColor;stroke-width:3.2637;fill:none" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
+   </g>
+  </symbol>
+
+  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
+   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
+   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
+   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
+  </symbol>
+
+  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
+    <g transform="translate(0 -875.2)">
+     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
+    </g>
+  </symbol>
+
+  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
+   <g transform="translate(0 -875.2)">
+    <g>
+     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
+     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
+     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
+     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
+     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
+     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="info" viewBox="0 0 41.667 41.667">
+   <g transform="translate(-37.035 -1004.6)">
+    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
+    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+   </g>
+  </symbol>
+
+  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
+    <g transform="translate(-1.1273 -1010.2)">
+     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
+     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
+     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
+    </g>
+  </symbol>
+
+  <symbol id="menu" viewBox="0 0 50 50">
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
+     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
+   </symbol>
+
+   <symbol id="link" viewBox="0 0 50 50">
+    <g transform="translate(0 -1002.4)">
+     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
+      <g>
+       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
+      </g>
+     </g>
+    </g>
+  </symbol>
+
+  <symbol id="doc" viewBox="0 0 35 45">
+   <g transform="translate(-147.53 -539.83)">
+    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
+    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
+     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
+     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
+    </g>
+   </g>
+ </symbol>
+
+ <symbol id="tick" viewBox="0 0 177.16535 177.16535">
+  <g transform="translate(0 -875.2)">
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
+   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
+  </g>
+ </symbol>
+</svg>
+
+  <div class="wrapper">
+    <header class="intro-and-nav" role="banner">
+  <div>
+    <div class="intro">
+      
+      <div>
+        <h2>@fernandrone</h2>
+      </div>
+      <p class="library-desc">
+        
+        Coisas sobre a nuvem que não cabem no twitter.
+        
+      </p>
+    </div>
+    <nav id="patterns-nav" class="patterns" role="navigation">
+  <h2 class="vh">Main navigation</h2>
+  <button id="menu-button" aria-expanded="false">
+    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+      <use xlink:href="#menu"></use>
+    </svg>
+    Menu
+  </button>
+  
+  <ul id="patterns-list">
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Home</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/posts/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Posts</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/talks/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Talks</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/sobre/" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">Sobre</span>
+      </a>
+    </li>
+  
+    <li class="pattern">
+      
+      
+      
+      
+      <a href="/index.xml" >
+        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+          <use xlink:href="#bookmark"></use>
+        </svg>
+        <span class="text">RSS</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+    <div class="social">
+    </div>
+  </div>
+</header>
+    <div class="main-and-footer">
+      <div>
+        
+<main id="main">
+  <h1>
+    <a href="https://fernandrone.com/posts/what-the-helm/" style="border-bottom:0px">
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+    </a>
+    What the Helm!?
+  </h1>
+
+  
+  <div class="tags">
+    <strong aria-hidden="true">Tags: </strong>
+    <ul aria-label="tags">
+      
+      <li>
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://fernandrone.com/tags/helm/">helm</a>
+      </li>
+      
+      <li>
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://fernandrone.com/tags/ci/cd/">ci/cd</a>
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  <div class="date">
+    August 24, 2019
+  </div>
+
+  <p>Or, <em>&ldquo;things I with I knew about Helm before using it as the continuous delivery solution for my Kubernetes clusters!&quot;</em></p>
+<p>I&rsquo;ve been running Helm as a Continuous Delivery tool for over one year. At QuintoAndar we&rsquo;ve used it to perform over 300 releases daily - I&rsquo;m certain there are far larger use cases out there, but that is probably large-is enough to get to see the good, the bad and the ugly side of most tools.</p>
+<p>Now, don&rsquo;t get me wrong, Helm is certainly not bad. But it can be complex, and it doesn&rsquo;t always behave in obvious ways. So I&rsquo;ve decided to write about this, about the pitfalls that won&rsquo;t be clear to you if you&rsquo;ve just read the documentation, but that may become painfully so when Helm is managing hundreds of workloads in production for you.</p>
+<h4 id="who-is-this-piece-aimed-at">Who is this piece aimed at?</h4>
+<ul>
+<li>People using Helm as their main as their main Continuous Delivery tool</li>
+<li>People thinking about using Helm as their main Continuous Delivery tool</li>
+</ul>
+<p>That&rsquo;s it. Also, this is <em>not</em> an introductory article! I will skip over the basic concepts, so if you are new to Helm please read the <a href="https://helm.sh/docs/using_helm/#quickstart">QuickStart Guide</a> first. After that, by all means, feel free to come back and enjoy the ride.</p>
+<h2 id="picking-the-helm-version">Picking the Helm Version</h2>
+<p>Let&rsquo;s start with the easy part!</p>
+<p>Please, <em>please</em> <a href="https://github.com/helm/helm/releases">grab the latest stable</a> Helm 2 version. If you <strong>must</strong> have something tested by me, run version <code>2.13</code>, this will give you the <code>--atomic</code> flag, pretty handy for continuous delivery. If that is still not enough, consider at least version <code>2.12</code>. That&rsquo;s the one I&rsquo;ve used for the longest time and it includes a few bugfixes that I consider essential (at least <a href="https://github.com/helm/helm/issues/4349">one of those bugs can leave your release irrecoverable</a>).</p>
+<p>Also, just so there&rsquo;s no confusion: as of august 2019, Helm 3 is still in beta, not ready for production, and will change <em>a lot</em> of things. I won&rsquo;t cover it at all.</p>
+<h2 id="initializing-helm">Initializing Helm</h2>
+<p>Now, there&rsquo;s a couple of things you&rsquo;ll want to get right when setting up Helm in a production environment. Some of them are covered just fine in the <a href="https://helm.sh/docs/using_helm/#quickstart">QuickStart Guide</a>, some of them are <em>not</em>, and some are covered in ways I <em>completely disagree with</em>. So pay attention!</p>
+<p>First of all, set the <code>--history-max</code> parameter. This controls how many previous instances of each release is kept. The documentation suggests a value of 200 which is of course <strong>downright insane</strong>! Since each Helm Release translates into a Kubernetes ConfigMap or Secret, the number of resources can grow very fast and put a real strain in your cluster. It may even break <a href="https://medium.com/@luca.naldini/rewriting-history-with-helm-b66e72958008">Helm itself</a>. In practical terms a Release simply gives you the ability to use the command <code>helm rollback</code> to restore to a previous state. That is certainly useful, but you don&rsquo;t need to store 200 releases. Keeping 20, 10 or even 5 is just fine.</p>
+<blockquote>
+<p>If you already have Tiller running <em>without</em> a history limit, it is possible to reconfigure this, but you will need to upgrade Tiller or at least edit its deployment. See <a href="https://github.com/kubernetes/helm/issues/2332#issuecomment-323175162">this issue</a> for more information.</p>
+</blockquote>
+<p>Another concern is, of course, security. Actually, scratch that, no one cares about security! So feel free to skip to the next section.</p>
+<p>For the two of you who are tagging along, I recommend this great write-up from Bitnami Engineering, <a href="https://engineering.bitnami.com/articles/helm-security.html">Exploring the Security of Helm</a>. There are a lot of different strategies and they greatly depend on your situation, but I think the article&rsquo;s conclusion sums it up nicely:</p>
+<blockquote>
+<p><strong>If you have no 3rd-party services that talk to tiller:</strong> Restart tiller with &ndash;listen=localhost:44134 flag.</p>
+<p><strong>If you have 3rd-party services that talk to tiller:</strong> Configure TLS authentication.</p>
+<p><strong>If you need to offer different levels of access via tiller:</strong> Complicated. Multiple tiller instances, or Helm-crd.</p>
+</blockquote>
+<p>The key takeaway is that you probably do not need to bother with TLS, you can just limit Tiller&rsquo;s GRPC webserver access to &ldquo;localhost&rdquo; instead. This way it&rsquo;s only possible to connect to it through Kubernetes API server port-forward capabilities, conveniently used by the Helm client. If that does not work for you, use TLS. Then the best source is the QuickStart documentation, under <a href="https://helm.sh/docs/using_helm/#using-ssl-between-helm-and-tiller">TLS/SSL for Helm and Tiller</a>.</p>
+<p>Also, remember that I said that each Helm release is a ConfigMap or a Secret? By default, it&rsquo;s a ConfigMap, which is a bit unsafe. If, for example, you were to use Helm to deploy a Secret, Helm would - rather unhelpfully - store its contents in a ConfigMap. Still, you can override that behavior, just don&rsquo;t forget to do so!</p>
+<p>Finally, unless you are running some sort of Medieval-era Kubernetes, you should use <a href="https://helm.sh/docs/using_helm/#rbac">RBAC</a>. The choices here are pretty much either giving Tiller the &ldquo;cluster-admin&rdquo; role, or restricting it to one or several namespaces.</p>
+<p>For this example, I&rsquo;m creating a <code>tiller</code> role with permissions to manage resources in the whole cluster:</p>
+<pre><code>$ kubectl -n kube-system create serviceaccount tiller &amp;&amp; \
+  kubectl create clusterrolebinding tiller \
+          --clusterrole cluster-admin \
+          --serviceaccount=kube-system:tiller
+</code></pre><p>This gives us an initialization command that is more or less like this:</p>
+<pre><code>$ helm init \          # helm init command
+    --history-max=5 \  # short helm history size
+    --override 'spec.template.spec.containers[0].command'='{/tiller,--storage=secret}' \  # override storage for secret instead of configmap
+    --override 'spec.template.spec.containers[0].args'='{--listen=localhost:44134}' \     # block all outside connections, only port-forward allowed
+    --tiller-image gcr.io/kubernetes-helm/tiller:v2.14.3 \  # use latest release
+    --service-account=tiller  # use service-account we just created
+</code></pre><p>Alright! Now that Helm is running, we can start breaking things.</p>
+<h2 id="helm-is-the-captain-now-not-you">Helm is the Captain Now! Not You!</h2>
+<p>I&rsquo;m going to run some Helm commands as example, to illustrate my points. These are real tests against a local <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">Minikube</a> cluster.</p>
+<p>Here I&rsquo;m using a handy helper command. This creates a sample chart that consists of a Nginx deployments.</p>
+<pre><code>$ helm create mychart
+</code></pre><p>Now, to deploy my lonely Nginx server with Helm:</p>
+<pre><code>$ helm install ./mychart --name nginx
+</code></pre><p>This has created a Helm release in our Kubernetes cluster. Remember that I&rsquo;m assuming that you, the reader, is already familiar with the Helm basics! Now let&rsquo;s assume that someone else, maybe a uninformed developer, used <code>kubectl</code> (or the Kubernetes dashboard, does not really matter) to scale up the number of replicas of our Nginx server.</p>
+<pre><code>$ kubectl scale deployments nginx-mychart --replicas=3
+deployment.extensions/nginx-mychart scaled
+</code></pre><p>Maybe this could have been a service that was under too much stress and lacked autoscaling. Well, the reasons don&rsquo;t matter. For our hypothetical example, let&rsquo;s assume we try to scale it back to 1 instance, but now using Helm. If you read the sample chart documentation, or use <code>helm inspect mychart</code> command, you will quick see this is the <code>replicaCount</code> parameter:</p>
+<pre><code>$ helm upgrade nginx ./mychart --set replicaCount=3 --wait
+</code></pre><p>So now we are back to one server, right? Well, no.</p>
+<pre><code>$ kubectl get po     
+NAME                             READY   STATUS    RESTARTS   AGE
+nginx-mychart-56d94dd744-pd4mp   1/1     Running   0          3m1s
+nginx-mychart-56d94dd744-pxc6z   1/1     Running   0          3m1s
+nginx-mychart-56d94dd744-vncqg   1/1     Running   0          9m9s
+</code></pre><p>What? Still three pods? Yet, <code>helm history</code> shows the latest release as DEPLOYED. Also, <code>helm get</code> shows the expected value of <code>replicaCount: 1</code> everywhere. So Helm tells me I have one server, yet Kubernetes clearly tells me I have three! What madness is this?</p>
+<p>Maybe I&rsquo;m missing some flag in my upgrade command?</p>
+<pre><code>Flags:
+      --atomic                   if set, upgrade process rolls back changes made in case of failed upgrade, also sets --wait flag
+      --ca-file string           verify certificates of HTTPS-enabled servers using this CA bundle
+      --cert-file string         identify HTTPS client using this SSL certificate file
+      --cleanup-on-fail          allow deletion of new resources created in this upgrade when upgrade failed
+      --description string       specify the description to use for the upgrade, rather than the default
+      --devel                    use development versions, too. Equivalent to version '&gt;0.0.0-0'. If --version is set, this is ignored.
+      --dry-run                  simulate an upgrade
+      --force                    force resource update through delete/recreate if needed
+  -h, --help                     help for upgrade
+  -i, --install                  if a release by this name doesn't already exist, run an install
+      --key-file string          identify HTTPS client using this SSL key file
+      --keyring string           path to the keyring that contains public signing keys (default &quot;/home/walker/.gnupg/pubring.gpg&quot;)
+      --namespace string         namespace to install the release into (only used if --install is set). Defaults to the current kube config namespace
+      --no-hooks                 disable pre/post upgrade hooks
+      --password string          chart repository password where to locate the requested chart
+      --recreate-pods            performs pods restart for the resource if applicable
+      --render-subchart-notes    render subchart notes along with parent
+      --repo string              chart repository url where to locate the requested chart
+      --reset-values             when upgrading, reset the values to the ones built into the chart
+      --reuse-values             when upgrading, reuse the last release's values and merge in any overrides from the command line via --set and -f. If '--reset-values' is specified, this is ignored.
+      --set stringArray          set values on the command line (can specify multiple or separate values with commas: key1=val1,key2=val2)
+      --set-file stringArray     set values from respective files specified via the command line (can specify multiple or separate values with commas: key1=path1,key2=path2)
+      --set-string stringArray   set STRING values on the command line (can specify multiple or separate values with commas: key1=val1,key2=val2)
+      --timeout int              time in seconds to wait for any individual Kubernetes operation (like Jobs for hooks) (default 300)
+      --tls                      enable TLS for request
+      --tls-ca-cert string       path to TLS CA certificate file (default &quot;$HELM_HOME/ca.pem&quot;)
+      --tls-cert string          path to TLS certificate file (default &quot;$HELM_HOME/cert.pem&quot;)
+      --tls-hostname string      the server name used to verify the hostname on the returned certificates from the server
+      --tls-key string           path to TLS key file (default &quot;$HELM_HOME/key.pem&quot;)
+      --tls-verify               enable TLS for request and verify remote
+      --username string          chart repository username where to locate the requested chart
+  -f, --values valueFiles        specify values in a YAML file or a URL(can specify multiple) (default [])
+      --verify                   verify the provenance of the chart before upgrading
+      --version string           specify the exact chart version to use. If this is not specified, the latest version is used
+      --wait                     if set, will wait until all Pods, PVCs, Services, and minimum number of Pods of a Deployment are in a ready state before marking the release as successful. It will wait for as long as --timeout
+</code></pre><p>Could it be <code>reset-values</code>? Or maybe is it <code>reuse-values</code>? <em>Believe me</em>, you do <strong>not</strong> want to go down that path.</p>
+<h3 id="alright-what-is-happening-here">Alright, what is happening here?</h3>
+<p>Nothing is happening, after all, it is a <a href="https://github.com/helm/helm/issues/3805#issuecomment-401714673">Feature, not a Bug</a>.</p>
+<blockquote>
+<p>Helm expects that you&rsquo;re not modifying manifests outside of the Helm system.</p>
+</blockquote>
+<p>You see, as a rule of thumb, at every new release, Helm compares all the incoming data with the latest <em>successful</em> release. Everything else gets discarded. <strong>Any modification to a resource that Helm itself didn&rsquo;t make is ignored</strong>. In the example above, from Helm&rsquo;s point of view, Nginx first release had one replica. The next release, the one we&rsquo;re trying to make, also has one replica. The fact that at some point someone used <code>kubectl</code> to manually scale to 3 replicas is irrelevant! Thus, Helm does nothing and says nothing.</p>
+<p>Still, <em>if you know about it</em>, you can be prepared: once you start using Helm as the means of deployment into your cluster, <strong>make sure every single change is made by Helm</strong>. And if you make any change <em>outside</em> Helm, try to undo it eventually. Otherwise it might sit there forever.</p>
+<p>Helm is the Captain now. Either he is in charge, or no one is.</p>
+<h2 id="the-upgrade-command">The Upgrade Command</h2>
+<p>So, as I hinted before, <code>helm upgrade</code> has a lot of Flags. A <em>lot</em>. And this causes all sorts of problems for a continuous delivery tool, because every potential combination is a new code path that has to be tested for bugs. It&rsquo;s a new set of use cases that it <em>has</em> to support. When I combine <code>--cleanup-on-fail</code> with and without <code>--wait</code>, will it behave any differently? (yeah, it does).</p>
+<p>So, which ones should we be using? Well, let me tell you first which ones you should NOT be using.</p>
+<h3 id="the-first-time-is-the-worst">The First Time is the Worst</h3>
+<p>Now, you probably do not want to be using the <code>install</code> command in a continuous delivery pipeline. The reason is that it only works for the first release! For every successive release, you need the <code>upgrade</code> command. But what if you want something that works on both? Like, you know, <code>kubectl apply</code>? Oh, of course!</p>
+<pre><code>$ helm apply
+Error: unknown command &quot;apply&quot; for &quot;helm&quot;
+Run 'helm --help' for usage.
+</code></pre><p>Hah, don&rsquo;t be silly! Did you actually think things would start to make sense <em>now</em>? In fact, you use <code>helm upgrade --install</code>. Why did this win over <code>helm install --upgrade</code> is beyond me.</p>
+<h2 id="continuous-delivery">Continuous Delivery</h2>
+<p>As we&rsquo;ve just established, you should know that already. But I&rsquo;ll entertain you, because I</p>
+<p>We know this happens: most of us install something and once it works forget about it forever. Upgrading is risky and scary (despite what these <a href="https://twitter.com/IstioMesh/status/1133745275623710722">3 month <em>&ldquo;long&rdquo;</em> term support</a> disclosures say) .</p>
+<p>So this has been a long rant. I didn&rsquo;t set out to convince anyone to start or stop using Helm, just meant to talk about some considerations that might interest others meaning to use it for continuous delivery. For my part, I do find Helm Templates quite powerful, and Helm Charts quite practical, but at the same time I find it lacking as a release manager. A colleague has looked into <a href="https://www.weave.works/technologies/gitops/">GitOps</a> and we&rsquo;re testing <a href="https://argoproj.github.io/argo-cd/">ArgoCD</a> and so far the results are very promising.</p>
+
+</main>
+
+        <footer role="contentinfo">
+  <div>
+  
+      © 2019 Fernando Barbosa · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+  
+  <br>
+  
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/fernandrone/cupper-hugo-theme">Cupper</a>.
+  
+  </div>
+</p>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://fernandrone.com/js/prism.js"></script>
+<script src="https://fernandrone.com/js/dom-scripts.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  
+  
+
+</body>
+
+</html>

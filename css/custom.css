@@ -10,17 +10,18 @@
   font-size: 0.6em;
 }
 
-h1, h2, h3, h4 {
-  font-family: "Open Sans", sans-serif;
-}
-
 h1 {
   font-size: 1.7rem;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
+
 .patterns li {
-  line-height: 1.9;
-  font-size: 1rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 li {
@@ -48,4 +49,11 @@ p {
 /* Reduce margins between sub-titles within posts */
 * + * {
   margin-top: 1.2rem;
+}
+
+img[src$='#center'] {
+  display: block;
+  margin: 1.0rem auto;
+  max-width: 100%;
+  height: auto;
 }
