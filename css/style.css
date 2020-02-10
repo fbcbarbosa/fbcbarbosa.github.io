@@ -1,0 +1,82 @@
+/*
+ * Custom configuration added to cupper theme. By fernandrone.
+ */
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.patterns li {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+li {
+  margin: 1em 0;
+}
+
+html {
+  font-size: calc(0.9em+0.33vw);
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #111;
+  background-color: #f6f5f3;
+}
+
+p {
+  margin-block-start: 1.4em;
+  margin-block-end: 1.4em;
+}
+
+* + * {
+  margin-top: 1.2rem;
+}
+
+img[src$="#center"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+}
+
+[role="contentinfo"] {
+  font-size: 0.6em;
+}
+
+.date,
+.tags {
+  font-size: 0.75rem;
+}
+
+.pagination__row {
+  clear: right;
+  display: block;
+}
+
+.pagination__left {
+  float: left;
+}
+
+.pagination__right {
+  float: right;
+}
+
+.pagination__link {
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block !important;
+}
+
+.notfound {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background: #f0e68c;
+}
