@@ -613,7 +613,7 @@ figcaption {
 main {
   display: block;
   counter-reset: fig;
-  min-height: 100vh;
+  min-height: 65vh;
 }
 
 figcaption::before {
@@ -1285,4 +1285,29 @@ hr {
   margin-top: 25px;
   margin-bottom: 25px;
   border-top: 1px solid #4c4c4c;
+}
+
+div.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.i18nlist {
+  display: inline-block;
+  margin: 0px;
+  height: 20px;
+  vertical-align: text-top;
+}
+
+a.i18nlist {
+  border-bottom: 0px none;
+}
+
+p.i18nlist {
+  font-size: 0.85rem;
+  line-height: 0px;
+  text-align: right;
+  vertical-align: text-top;
+  margin: auto;
+  padding-top: 10px;
 }
