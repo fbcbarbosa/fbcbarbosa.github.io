@@ -159,7 +159,8 @@ pre,
 
 code {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 0.75em;
+  font-size: 0.85em;
+  background-color: #ddd;
 }
 
 .cmd {
@@ -617,6 +618,10 @@ figcaption::before {
   counter-increment: fig;
   content: "Figure " counter(fig) ":\0020";
   font-weight: 700;
+}
+
+pre {
+  background: #ddd;
 }
 
 pre[class*="language-"] {
@@ -1221,6 +1226,10 @@ img[src$="#center"] {
   max-width: 100%;
   height: auto;
   margin: 1rem auto;
+  background: url(URL) no-repeat;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 img[src$="#profile"] {
@@ -1345,4 +1354,8 @@ p.i18nlist {
 #main {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.twitter-tweet {
+  margin: auto;
 }
